@@ -20,7 +20,7 @@ BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libtool
 BuildRequires:	perl-devel
 Prereq:		/sbin/ldconfig
-Requires:	gtk+-devel
+Prereq:		gtk+-devel
 URL:		http://gdkxft.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
