@@ -2,8 +2,8 @@
 Summary:	Adapt GTK-1.2 to support xft fonts
 Summary(pl):	Wsparcie dla fontów xft dla GTK-1.2
 Name:		gdkxft
-Version:	1.2
-Release:	2
+Version:	1.4
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
