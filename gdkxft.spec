@@ -16,7 +16,7 @@ Source0:	http://dl.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
 URL:		http://gdkxft.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-%{?with_gnome:BuildRequires:	control-center-devel}
+%{?with_gnome:BuildRequires:	control-center1-devel}
 BuildRequires:	freetype-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	help2man
