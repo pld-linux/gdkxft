@@ -7,14 +7,16 @@ Version:	1.5
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
-Group(de):	X11/Libraries
+Group(de):	X11/Bibliotheken
 Group(es):	X11/Bibliotecas
 Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
 Group(pt_BR):	X11/Bibliotecas
+Group(pt):	X11/Bibliotecas
 Group(ru):	X11/Библиотеки
 Group(uk):	X11/Б╕бл╕отеки
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/gdkxft/%{name}-%{version}.tar.gz
+# Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/gdkxft/%{name}-%{version}.tar.gz
+Source0:	http://prdownloads.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libglade-devel
@@ -22,7 +24,7 @@ BuildRequires:	libtool
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	perl-devel
 Prereq:		/sbin/ldconfig
-URL:		http://philrsss.anu.edu.au/~josh/gdkxft/
+URL:		http://gdkxft.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -48,11 +50,12 @@ Summary:	Files and libraries for developing apps
 Summary(pt_BR):	Bibliotecas e arquivos de inclusЦo para desenvolvimento
 Summary(es):	Bibliotecas y archivos de inclusiСn para desarrollo
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
+Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(pt):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
 PreReq:		%{name} = %{version}-%{release}
@@ -69,11 +72,12 @@ baseado na libgdkxft.
 Summary:	Static libraries for libgdkxft development
 Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento com a libgdkxft
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
+Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(pt):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}-%{release}
@@ -90,9 +94,11 @@ Summary(pl):	NarzЙdzie do konfiguracji gdkxft w GNOME
 Group:		X11/Applications
 Group(de):	X11/Applikationen
 Group(es):	X11/Aplicaciones
+Group(fr):	X11/Applications
 Group(pl):	X11/Aplikacje
 Group(pt_BR):	X11/AplicaГУes
 Group(pt):	X11/AplicaГУes
+Group(ru):	X11/Приложения
 Requires:	%{name} = %{version}
 
 %description capplet
