@@ -3,7 +3,7 @@ Summary:	Adapt GTK-1.2 to support xft fonts
 Summary(pl):	Wsparcie dla fontów xft dla GTK-1.2
 Name:		gdkxft
 Version:	1.4
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -38,6 +38,17 @@ Biblioteka dodaj±ca prze¼roczyst± obs³ugê dla wyg³adzanych fontów
 w komponencie libgdk biblioteki gtk+-1.2.x. Widgety gtk+ automatycznie
 bêd± u¿ywa³y tych fontów.
 
+%package capplet
+Summary:	Capplet to configure gdkxft in GNOME
+Summary(pl):	Narzêdzie do konfiguracji gdkxft w GNOME
+Group:		X11/Applications
+
+%description capplet
+Capplet to configure gdkxft in GNOME
+
+%description capplet -l pl
+Narzêdzie do konfiguracji gdkxft w GNOME
+
 %prep
 %setup -q
 
@@ -67,6 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %preun
 %{_sbindir}/gdkxft_sysinstall -u
+
 %postun -p /sbin/ldconfig
 
 %files
@@ -77,3 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libgdkxft.la
 %attr(644,root,root) %{_libdir}/libgdkxft.a
 %attr(755,root,root) %{_sbindir}/gdkxft_sysinstall
+
+%files capplet
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/*-capplet
