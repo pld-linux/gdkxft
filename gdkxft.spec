@@ -8,9 +8,8 @@ Summary(pl):	Wsparcie dla fontów xft dla GTK-1.2
 Summary(pt_BR):	Adapta o GTK-1.2 para suportar fontes xft
 Name:		gdkxft
 Version:	1.5
-Release:	2
+Release:	3
 License:	LGPL
-# Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/gdkxft/%{name}-%{version}.tar.gz
 Group:		X11/Libraries
 Group(cs):	X11/Knihovny
 Group(da):	X11/Biblioteker
@@ -26,6 +25,7 @@ Group(pt):	X11/Bibliotecas
 Group(ru):	X11/âÉÂÌÉÏÔÅËÉ
 Group(sv):	X11/Bibliotek
 Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
+# Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/gdkxft/%{name}-%{version}.tar.gz
 Source0:	http://prdownloads.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
 %{!?_without_gnome:BuildRequires:	libglade-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
@@ -151,11 +151,15 @@ Narzêdzie do konfiguracji gdkxft w GNOME.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{/etc/X11/xinit/xinitrc.d,%{_datadir}/themes/Gdkxft/gtk}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-	
-gzip -9nf AUTHORS COPYING ChangeLog NEWS README
+
+> $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gdkxft
+> $RPM_BUILD_ROOT%{_datadir}/themes/Gdkxft/gtk/gtkrc
+
+gzip -9nf AUTHORS ChangeLog NEWS README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -172,7 +176,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz
-%config %{_sysconfdir}/gdkxft.conf
+%dir %{_datadir}/themes/Gdkxft
+%dir %{_datadir}/themes/Gdkxft/gtk
+%ghost %{_datadir}/themes/Gdkxft/gtk/gtkrc
+%ghost /etc/X11/xinit/xinitrc.d/gdkxft
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/gdkxft.conf
 %attr(755,root,root) %{_sbindir}/gdkxft_sysinstall
 %attr(755,root,root) %{_libdir}/libgdkxft.so.*.*
 
