@@ -15,6 +15,8 @@ Source0:	http://dl.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
 URL:		http://gdkxft.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	freetype-devel
+BuildRequires:	help2man
 %{!?_without_gnome:BuildRequires:	control-center-devel}
 %{!?_without_gnome:BuildRequires:	libglade-gnome-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
@@ -89,7 +91,7 @@ Narzêdzie do konfiguracji gdkxft w GNOME.
 %setup -q
 
 %build
-%if %{?_without_gnome:1}%{!?_without_gnome:0}
+%if %{!?_without_gnome:1}0
 cat >> acinclude.m4 <<EOF
 AC_DEFUN([AM_PATH_LIBGLADE],[
 AM_CONDITIONAL([HAVE_ORBIT],false)
@@ -102,6 +104,7 @@ rm -f missing
 %{__autoconf}
 %{__automake}
 %configure \
+	CFLAGS="%{rpmcflags} -I%{_includedir}/freetype2" \
 	--enable-static \
 	--enable-shared
 
@@ -117,14 +120,17 @@ install -d $RPM_BUILD_ROOT{/etc/X11/xinit/xinitrc.d,%{_datadir}/themes/Gdkxft/gt
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-perl -pi -e "s@\\\`gtk-config --prefix\\\` \\|\\| \"/usr\"@\"`gtk-config --prefix`\"@g" \
+%{__perl} -pi -e "s@\\\`gtk-config --prefix\\\` \\|\\| \"/usr\"@\"`gtk-config --prefix`\"@g" \
 	$RPM_BUILD_ROOT%{_sbindir}/gdkxft_sysinstall
 
 > $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gdkxft
 > $RPM_BUILD_ROOT%{_datadir}/themes/Gdkxft/gtk/gtkrc
 
+%if %{!?_without_gnome:1}0
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings/GNOME
-mv -f $RPM_BUILD_ROOT{%{_datadir}/gnome/apps/Settings/UIOptions,%{_applnkdir}/Settings/GNOME}
+mv -f	$RPM_BUILD_ROOT%{_datadir}/gnome/apps/Settings/UIOptions \
+	$RPM_BUILD_ROOT%{_applnkdir}/Settings/GNOME
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -160,7 +166,7 @@ fi
 %defattr(644,root,root,755)
 %{_libdir}/libgdkxft.a
 
-%if %{?_without_gnome:0}%{!?_without_gnome:1}
+%if %{!?_without_gnome:1}0
 %files capplet
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*-capplet
