@@ -17,8 +17,8 @@ Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/gdkxft/%{name}-%{version}.tar.gz
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
 BuildRequires:	libglade-devel
+BuildRequires:	libtool
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	perl-devel
 Prereq:		/sbin/ldconfig
@@ -84,7 +84,6 @@ Static libraries for libgdkxft development.
 %description -l pt_BR static
 Bibliotecas estáticas para desenvolvimento com a libgdkxft.
 
-
 %package capplet
 Summary:	Capplet to configure gdkxft in GNOME
 Summary(pl):	Narzêdzie do konfiguracji gdkxft w GNOME
@@ -94,6 +93,7 @@ Group(es):	X11/Aplicaciones
 Group(pl):	X11/Aplikacje
 Group(pt_BR):	X11/Aplicações
 Group(pt):	X11/Aplicações
+Requires:	%{name} = %{version}
 
 %description capplet
 Capplet to configure gdkxft in GNOME.
