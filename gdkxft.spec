@@ -12,6 +12,7 @@ Release:	12
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
+# Source0-md5:	ed594e24cf2aefe7a71f96425c1922e8
 URL:		http://gdkxft.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
