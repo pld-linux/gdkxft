@@ -27,7 +27,7 @@ Group(sv):	X11/Bibliotek
 Group(uk):	X11/Б╕бл╕отеки
 # Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/gdkxft/%{name}-%{version}.tar.gz
 Source0:	http://prdownloads.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
-BuildRequires:	control-center-devel
+%{!?_without_gnome:BuildRequires:	control-center-devel}
 %{!?_without_gnome:BuildRequires:	libglade-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	perl-devel
