@@ -23,8 +23,6 @@ BuildRequires:	rpm-perlprov
 Requires(post):	/sbin/ldconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description 
 A library that adds transparent support for anti-aliased fonts to the
