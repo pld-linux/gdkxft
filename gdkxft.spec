@@ -91,7 +91,7 @@ Narzêdzie do konfiguracji gdkxft w GNOME.
 %setup -q
 
 %build
-%if %{with gnome}
+%if %{without gnome}
 cat >> acinclude.m4 <<EOF
 AC_DEFUN([AM_PATH_LIBGLADE],[
 AM_CONDITIONAL([HAVE_ORBIT],false)
