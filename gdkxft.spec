@@ -92,6 +92,9 @@ Narzêdzie do konfiguracji gdkxft w GNOME.
 	--enable-static \
 	--enable-shared
 
+sed -e s:capplet-widget.h:libcapplet1/capplet-widget.h: capplet/gdkxft-capplet.c > capplet/gdkxft-capplet.tmp
+mv -f capplet/gdkxft-capplet.tmp capplet/gdkxft-capplet.c
+
 %{__make}
 
 %install
@@ -144,4 +147,8 @@ fi
 %files capplet
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*-capplet
+%{_datadir}/gdkxft-capplet.glade
+%{_datadir}/pixmaps/gdkxft.png
+%{_datadir}/control-center/UIOptions/gdkxft.desktop
+%{_datadir}/gnome/apps/Settings/UIOptions/gdkxft.desktop
 %endif
