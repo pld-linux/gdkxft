@@ -2,7 +2,7 @@
 Summary:	Adapt GTK-1.2 to support xft fonts
 Summary(pl):	Wsparcie dla fontów xft dla GTK-1.2
 Name:		gdkxft
-Version:	1.1
+Version:	1.2
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
@@ -16,10 +16,12 @@ Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
 Source0:	http://philrsss.anu.edu.au/~josh/gdkxft/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 URL:		http://philrsss.anu.edu.au/~josh/gdkxft/
+Prereq:		/sbin/ldconfig
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	XFree86-devel
+BuildRequires:	libglade-devel
 BuildRequires:	perl-devel
 BuildRequires:	gtk+-devel >= 1.2.0
 
@@ -61,13 +63,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %{_bindir}/gdkxft_sysinstall
+/sbin/ldconfig
 
 %preun
 %{_bindir}/gdkxft_sysinstall -u
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %doc *.gz
-%config %{_datadir}/gdkxft.conf
-%{_libdir}/libgdkxft.*
-%attr(755,root,root) %{_bindir}/gdkxft_sysinstall
+%config %{_sysconfdir}/gdkxft.conf
+%{_libdir}/libgdkxft.so*
+%{_libdir}/libgdkxft.la
+%attr(644,root,root) %{_libdir}/libgdkxft.a
+%attr(755,root,root) %{_sbindir}/gdkxft_sysinstall
