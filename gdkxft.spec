@@ -8,7 +8,7 @@ Summary(pl):	Wsparcie dla fontów xft dla GTK-1.2
 Summary(pt_BR):	Adapta o GTK-1.2 para suportar fontes xft
 Name:		gdkxft
 Version:	1.5
-Release:	7
+Release:	8
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://prdownloads.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
@@ -18,9 +18,8 @@ BuildRequires:	automake
 %{!?_without_gnome:BuildRequires:	libglade-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libtool
-BuildRequires:	perl-devel
-Prereq:		/sbin/ldconfig
-Prereq:		gtk+-devel
+BuildRequires:	rpm-perlprov
+Requires(post):	/sbin/ldconfig
 URL:		http://gdkxft.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -92,8 +91,15 @@ Narzêdzie do konfiguracji gdkxft w GNOME.
 %setup -q
 
 %build
+%if %{?_without_gnome:1}%{!?_without_gnome:0}
+cat >> acinclude.m4 <<EOF
+AC_DEFUN([AM_PATH_LIBGLADE],[
+AM_CONDITIONAL([HAVE_ORBIT],false)
+AM_CONDITIONAL([HAVE_GNORBA],false)])
+EOF
+%endif
 rm -f missing
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 %{__autoconf}
 %{__automake}
@@ -113,10 +119,11 @@ install -d $RPM_BUILD_ROOT{/etc/X11/xinit/xinitrc.d,%{_datadir}/themes/Gdkxft/gt
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+perl -pi -e "s@\\\`gtk-config --prefix\\\` \\|\\| \"/usr\"@\"`gtk-config --prefix`\"@g" \
+	$RPM_BUILD_ROOT%{_sbindir}/gdkxft_sysinstall
+
 > $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gdkxft
 > $RPM_BUILD_ROOT%{_datadir}/themes/Gdkxft/gtk/gtkrc
-
-gzip -9nf AUTHORS ChangeLog NEWS README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -134,7 +141,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog NEWS README
 %dir %{_datadir}/themes/Gdkxft
 %dir %{_datadir}/themes/Gdkxft/gtk
 %ghost %{_datadir}/themes/Gdkxft/gtk/gtkrc
