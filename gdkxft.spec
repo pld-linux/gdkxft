@@ -62,11 +62,11 @@ gzip -9nf AUTHORS COPYING ChangeLog NEWS README
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%{_bindir}/gdkxft_sysinstall
+%{_sbindir}/gdkxft_sysinstall
 /sbin/ldconfig
 
 %preun
-%{_bindir}/gdkxft_sysinstall -u
+%{_sbindir}/gdkxft_sysinstall -u
 %postun -p /sbin/ldconfig
 
 %files
