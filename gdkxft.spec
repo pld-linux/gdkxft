@@ -11,22 +11,6 @@ Version:	1.5
 Release:	5
 License:	LGPL
 Group:		X11/Libraries
-Group(cs):	X11/Knihovny
-Group(da):	X11/Biblioteker
-Group(de):	X11/Bibliotheken
-Group(es):	X11/Bibliotecas
-Group(fr):	X11/Librairies
-Group(is):	X11/Ağgerğasöfn
-Group(it):	X11/Librerie
-Group(ja):	X11/¥é¥¤¥Ö¥é¥ê
-Group(no):	X11/Biblioteker
-Group(pl):	X11/Biblioteki
-Group(pt_BR):	X11/Bibliotecas
-Group(pt):	X11/Bibliotecas
-Group(ru):	X11/âÉÂÌÉÏÔÅËÉ
-Group(sl):	X11/Knji¾nice
-Group(sv):	X11/Bibliotek
-Group(uk):	X11/â¦ÂÌ¦ÏÔÅËÉ
 Source0:	http://prdownloads.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
 %{!?_without_gnome:BuildRequires:	control-center-devel}
 %{!?_without_gnome:BuildRequires:	libglade-devel}
@@ -60,22 +44,6 @@ Summary(es):	Bibliotecas y archivos de inclusión para desarrollo
 Summary(pl):	Pliki nag³owkowe gdkxft
 Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento
 Group:		Development/Libraries
-Group(cs):	Vıvojové prostøedky/Knihovny
-Group(da):	Udvikling/Biblioteker
-Group(de):	Entwicklung/Bibliotheken
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(is):	Şróunartól/Ağgerğasöfn
-Group(it):	Sviluppo/Librerie
-Group(ja):	³«È¯/¥é¥¤¥Ö¥é¥ê
-Group(no):	Utvikling/Bibliotek
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(pt):	Desenvolvimento/Bibliotecas
-Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
-Group(sl):	Razvoj/Knji¾nice
-Group(sv):	Utveckling/Bibliotek
-Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 PreReq:		%{name} = %{version}-%{release}
 
 %description devel
@@ -93,22 +61,6 @@ Summary:	Static libraries for libgdkxft development
 Summary(pl):	Statyczna biblioteka libgdkxft
 Summary(pt_BR):	Bibliotecas estáticas para desenvolvimento com a libgdkxft
 Group:		Development/Libraries
-Group(cs):	Vıvojové prostøedky/Knihovny
-Group(da):	Udvikling/Biblioteker
-Group(de):	Entwicklung/Bibliotheken
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(is):	Şróunartól/Ağgerğasöfn
-Group(it):	Sviluppo/Librerie
-Group(ja):	³«È¯/¥é¥¤¥Ö¥é¥ê
-Group(no):	Utvikling/Bibliotek
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(pt):	Desenvolvimento/Bibliotecas
-Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
-Group(sl):	Razvoj/Knji¾nice
-Group(sv):	Utveckling/Bibliotek
-Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
@@ -124,23 +76,6 @@ Bibliotecas estáticas para desenvolvimento com a libgdkxft.
 Summary:	Capplet to configure gdkxft in GNOME
 Summary(pl):	Narzêdzie do konfiguracji gdkxft w GNOME
 Group:		X11/Applications
-Group(cs):	X11/Aplikace
-Group(da):	X11/Programmer
-Group(de):	X11/Applikationen
-Group(es):	X11/Aplicaciones
-Group(fr):	X11/Applications
-Group(id):	X11/Aplikasi
-Group(is):	X11/Forrit
-Group(it):	X11/Applicazioni
-Group(ja):	X11/¥¢¥×¥ê¥±¡¼¥·¥ç¥ó
-Group(no):	X11/Applikasjoner
-Group(pl):	X11/Aplikacje
-Group(pt_BR):	X11/Aplicações
-Group(pt):	X11/Aplicações
-Group(ru):	X11/ğÒÉÌÏÖÅÎÉÑ
-Group(sl):	X11/Programi
-Group(sv):	X11/Tillämpningar
-Group(uk):	X11/ğÒÉËÌÁÄÎ¦ ğÒÏÇÒÁÍÉ
 Requires:	%{name} = %{version}
 
 %description capplet
