@@ -3,8 +3,8 @@ Summary:	Adapt GTK-1.2 to support xft fonts
 Summary(pl):	Wsparcie dla fontów xft dla GTK-1.2
 Summary(pt_BR):	Adapta o GTK-1.2 para suportar fontes xft
 Name:		gdkxft
-Version:	1.4
-Release:	2
+Version:	1.5
+Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -110,7 +110,10 @@ libtoolize --copy --force
 aclocal
 autoconf
 automake -a -c
-%configure
+%configure \
+	--enable-static \
+	--enable-shared
+
 %{__make}
 
 %install
