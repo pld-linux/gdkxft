@@ -11,7 +11,7 @@ Version:	1.5
 Release:	12
 License:	LGPL
 Group:		X11/Libraries
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/gdkxft/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
 URL:		http://gdkxft.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
