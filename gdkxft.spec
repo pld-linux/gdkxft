@@ -28,18 +28,18 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A library that adds transparent support for anti-aliased fonts to the
-libgdk component of gtk+-1.2.x. Gtk+ widgets will automagically use
+libgdk component of gtk+-1.2.x. GTK+ widgets will automagically use
 the fonts.
 
 %description -l pl
 Biblioteka dodaj±ca prze¼roczyst± obs³ugê dla wyg³adzanych fontów w
-komponencie libgdk biblioteki gtk+-1.2.x. Widgety gtk+ automatycznie
+komponencie libgdk biblioteki gtk+-1.2.x. Widgety GTK+ automatycznie
 bêd± u¿ywa³y tych fontów.
 
 %description -l pt_BR
 Este pacote contém bibliotecas para adicionar suporte transparente a
 fontes anti-aliased para o componente libgdk do gtk+-1.2. Os widgets
-Gtk+ vão automaticamente usar essas fontes.
+GTK+ vão automaticamente usar essas fontes.
 
 %package devel
 Summary:	Header files for developing apps
