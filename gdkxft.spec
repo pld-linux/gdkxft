@@ -155,7 +155,7 @@ fi
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libgdkxft.la
+%{_libdir}/libgdkxft.la
 %attr(755,root,root) %{_libdir}/libgdkxft.so
 
 %files static
