@@ -11,16 +11,16 @@ Version:	1.5
 Release:	8
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://telia.dl.sourceforge.net/sourceforge/gdkxft/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/gdkxft/%{name}-%{version}.tar.gz
+URL:		http://gdkxft.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 %{!?_without_gnome:BuildRequires:	control-center-devel}
-%{!?_without_gnome:BuildRequires:	libglade-devel}
+%{!?_without_gnome:BuildRequires:	libglade-gnome-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	libtool
 BuildRequires:	rpm-perlprov
 Requires(post):	/sbin/ldconfig
-URL:		http://gdkxft.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
