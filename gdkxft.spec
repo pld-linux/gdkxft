@@ -12,9 +12,12 @@ Release:	7
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://prdownloads.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
 %{!?_without_gnome:BuildRequires:	control-center-devel}
 %{!?_without_gnome:BuildRequires:	libglade-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	libtool
 BuildRequires:	perl-devel
 Prereq:		/sbin/ldconfig
 URL:		http://gdkxft.sourceforge.net/
@@ -88,6 +91,11 @@ Narzêdzie do konfiguracji gdkxft w GNOME.
 %setup -q
 
 %build
+rm -f missing
+libtoolize --copy --force
+aclocal
+autoconf
+automake -a -c -f
 %configure \
 	--enable-static \
 	--enable-shared
