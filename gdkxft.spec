@@ -26,7 +26,6 @@ BuildRequires:	rpm-perlprov
 Requires(post):	/sbin/ldconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description 
 A library that adds transparent support for anti-aliased fonts to the
 libgdk component of gtk+-1.2.x. Gtk+ widgets will automagically use
@@ -172,7 +171,7 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*-capplet
 %{_datadir}/gdkxft-capplet.glade
-%{_datadir}/pixmaps/gdkxft.png
 %{_datadir}/control-center/UIOptions/gdkxft.desktop
+%{_pixmapsdir}/gdkxft.png
 %{_applnkdir}/Settings/GNOME/UIOptions/gdkxft.desktop
 %endif
