@@ -16,6 +16,7 @@ Group(da):	X11/Biblioteker
 Group(de):	X11/Bibliotheken
 Group(es):	X11/Bibliotecas
 Group(fr):	X11/Librairies
+Group(is):	X11/AПgerПasЖfn
 Group(it):	X11/Librerie
 Group(ja):	X11/╔И╔╓╔ж╔И╔Й
 Group(no):	X11/Biblioteker
@@ -23,9 +24,9 @@ Group(pl):	X11/Biblioteki
 Group(pt_BR):	X11/Bibliotecas
 Group(pt):	X11/Bibliotecas
 Group(ru):	X11/Библиотеки
+Group(sl):	X11/Knji╬nice
 Group(sv):	X11/Bibliotek
 Group(uk):	X11/Б╕бл╕отеки
-# Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/gdkxft/%{name}-%{version}.tar.gz
 Source0:	http://prdownloads.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
 %{!?_without_gnome:BuildRequires:	control-center-devel}
 %{!?_without_gnome:BuildRequires:	libglade-devel}
@@ -64,6 +65,7 @@ Group(da):	Udvikling/Biblioteker
 Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
+Group(is):	чrСunartСl/AПgerПasЖfn
 Group(it):	Sviluppo/Librerie
 Group(ja):	Ё╚х╞/╔И╔╓╔ж╔И╔Й
 Group(no):	Utvikling/Bibliotek
@@ -71,6 +73,7 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(pt):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
+Group(sl):	Razvoj/Knji╬nice
 Group(sv):	Utveckling/Bibliotek
 Group(uk):	Розробка/Б╕бл╕отеки
 PreReq:		%{name} = %{version}-%{release}
@@ -95,6 +98,7 @@ Group(da):	Udvikling/Biblioteker
 Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
+Group(is):	чrСunartСl/AПgerПasЖfn
 Group(it):	Sviluppo/Librerie
 Group(ja):	Ё╚х╞/╔И╔╓╔ж╔И╔Й
 Group(no):	Utvikling/Bibliotek
@@ -102,6 +106,7 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(pt):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
+Group(sl):	Razvoj/Knji╬nice
 Group(sv):	Utveckling/Bibliotek
 Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}-%{release}
@@ -124,6 +129,8 @@ Group(da):	X11/Programmer
 Group(de):	X11/Applikationen
 Group(es):	X11/Aplicaciones
 Group(fr):	X11/Applications
+Group(id):	X11/Aplikasi
+Group(is):	X11/Forrit
 Group(it):	X11/Applicazioni
 Group(ja):	X11/╔╒╔в╔Й╔╠║╪╔╥╔Г╔С
 Group(no):	X11/Applikasjoner
@@ -131,7 +138,9 @@ Group(pl):	X11/Aplikacje
 Group(pt_BR):	X11/AplicaГУes
 Group(pt):	X11/AplicaГУes
 Group(ru):	X11/Приложения
+Group(sl):	X11/Programi
 Group(sv):	X11/TillДmpningar
+Group(uk):	X11/Прикладн╕ Програми
 Requires:	%{name} = %{version}
 
 %description capplet
