@@ -94,8 +94,8 @@ Narzêdzie do konfiguracji gdkxft w GNOME.
 rm -f missing
 libtoolize --copy --force
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-static \
 	--enable-shared
