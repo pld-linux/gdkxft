@@ -1,3 +1,7 @@
+#
+# Conditional build:
+# _without_gnome	- without capplet subpackage (which require GNOME libs to build)
+#
 %include	/usr/lib/rpm/macros.perl
 Summary:	Adapt GTK-1.2 to support xft fonts
 Summary(pl):	Wsparcie dla fontÛw xft dla GTK-1.2
@@ -17,10 +21,7 @@ Group(ru):	X11/‚…¬Ã…œ‘≈À…
 Group(uk):	X11/‚¶¬Ã¶œ‘≈À…
 # Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/gdkxft/%{name}-%{version}.tar.gz
 Source0:	http://prdownloads.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	libglade-devel
-BuildRequires:	libtool
+%{!?_without_gnome:BuildRequires:	libglade-devel}
 BuildRequires:	gtk+-devel >= 1.2.0
 BuildRequires:	perl-devel
 Prereq:		/sbin/ldconfig
@@ -46,9 +47,10 @@ fontes anti-aliased para o componente libgdk do gtk+-1.2. Os widgets
 Gtk+ v„o automaticamente usar essas fontes.
 
 %package devel
-Summary:	Files and libraries for developing apps
-Summary(pt_BR):	Bibliotecas e arquivos de inclus„o para desenvolvimento
+Summary:	Header files for developing apps
 Summary(es):	Bibliotecas y archivos de inclusiÛn para desarrollo
+Summary(pl):	Pliki nag≥owkowe gdkxft
+Summary(pt_BR):	Bibliotecas e arquivos de inclus„o para desenvolvimento
 Group:		Development/Libraries
 Group(de):	Entwicklung/Bibliotheken
 Group(es):	Desarrollo/Bibliotecas
@@ -61,15 +63,18 @@ Group(uk):	Úœ⁄“œ¬À¡/‚¶¬Ã¶œ‘≈À…
 PreReq:		%{name} = %{version}-%{release}
 
 %description devel
-Header files and libraries for developing apps with will use
-libgdkxft.
+Header files for developing apps with will use libgdkxft.
 
-%description -l pt_BR devel
+%description devel -l pl
+Pliki nag≥Ûwkowe do tworzenia aplikacji uøywaj±cych libgdkxft.
+
+%description devel -l pt_BR
 Bibliotecas e arquivos de inclus„o necess·rios para desenvolvimento
 baseado na libgdkxft.
 
 %package static
 Summary:	Static libraries for libgdkxft development
+Summary(pl):	Statyczna biblioteka libgdkxft
 Summary(pt_BR):	Bibliotecas est·ticas para desenvolvimento com a libgdkxft
 Group:		Development/Libraries
 Group(de):	Entwicklung/Bibliotheken
@@ -85,7 +90,10 @@ Requires:	%{name}-devel = %{version}-%{release}
 %description static
 Static libraries for libgdkxft development.
 
-%description -l pt_BR static
+%description static -l pl
+Statyczna biblioteka libgdkxft.
+
+%description static -l pt_BR
 Bibliotecas est·ticas para desenvolvimento com a libgdkxft.
 
 %package capplet
@@ -111,11 +119,6 @@ NarzÍdzie do konfiguracji gdkxft w GNOME.
 %setup -q
 
 %build
-rm -f missing
-libtoolize --copy --force
-aclocal
-autoconf
-automake -a -c
 %configure \
 	--enable-static \
 	--enable-shared
@@ -158,6 +161,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_libdir}/libgdkxft.a
 
+%if %{?_without_gnome:0}%{!?_without_gnome:1}
 %files capplet
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*-capplet
+%endif
