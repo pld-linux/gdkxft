@@ -11,7 +11,7 @@ Version:	1.5
 Release:	8
 License:	LGPL
 Group:		X11/Libraries
-Source0:	http://prdownloads.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
+Source0:	http://telia.dl.sourceforge.net/sourceforge/gdkxft/%{name}-%{version}.tar.gz
 BuildRequires:	autoconf
 BuildRequires:	automake
 %{!?_without_gnome:BuildRequires:	control-center-devel}
