@@ -16,11 +16,11 @@ Source0:	http://dl.sourceforge.net/gdkxft/%{name}-%{version}.tar.gz
 URL:		http://gdkxft.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	freetype-devel
-BuildRequires:	help2man
 %{!?_without_gnome:BuildRequires:	control-center-devel}
-%{!?_without_gnome:BuildRequires:	libglade-gnome-devel}
+BuildRequires:	freetype-devel
 BuildRequires:	gtk+-devel >= 1.2.0
+BuildRequires:	help2man
+%{!?_without_gnome:BuildRequires:	libglade-gnome-devel}
 BuildRequires:	libtool
 BuildRequires:	rpm-perlprov
 Requires(post):	/sbin/ldconfig
