@@ -8,7 +8,7 @@ Summary(pl):	Wsparcie dla fontów xft dla GTK-1.2
 Summary(pt_BR):	Adapta o GTK-1.2 para suportar fontes xft
 Name:		gdkxft
 Version:	1.5
-Release:	3
+Release:	4
 License:	LGPL
 Group:		X11/Libraries
 Group(cs):	X11/Knihovny
@@ -180,7 +180,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/themes/Gdkxft
 %dir %{_datadir}/themes/Gdkxft/gtk
 %ghost %{_datadir}/themes/Gdkxft/gtk/gtkrc
-%ghost /etc/X11/xinit/xinitrc.d/gdkxft
+%attr(755,root,root) %ghost /etc/X11/xinit/xinitrc.d/gdkxft
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/gdkxft.conf
 %attr(755,root,root) %{_sbindir}/gdkxft_sysinstall
 %attr(755,root,root) %{_libdir}/libgdkxft.so.*.*
