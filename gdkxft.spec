@@ -125,8 +125,8 @@ perl -pi -e "s@\\\`gtk-config --prefix\\\` \\|\\| \"/usr\"@\"`gtk-config --prefi
 > $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/gdkxft
 > $RPM_BUILD_ROOT%{_datadir}/themes/Gdkxft/gtk/gtkrc
 
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings
-mv -f $RPM_BUILD_ROOT{%{_datadir}/gnome/apps/Settings/UIOptions,%{_applnkdir}/Settings}
+install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings/GNOME
+mv -f $RPM_BUILD_ROOT{%{_datadir}/gnome/apps/Settings/UIOptions,%{_applnkdir}/Settings/GNOME}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -169,6 +169,5 @@ fi
 %{_datadir}/gdkxft-capplet.glade
 %{_datadir}/pixmaps/gdkxft.png
 %{_datadir}/control-center/UIOptions/gdkxft.desktop
-%dir %{_applnkdir}/Settings/UIOptions
-%{_applnkdir}/Settings/UIOptions/gdkxft.desktop
+%{_applnkdir}/Settings/GNOME/UIOptions/gdkxft.desktop
 %endif
