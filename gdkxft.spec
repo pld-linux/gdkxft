@@ -26,7 +26,7 @@ BuildRequires:	rpm-perlprov
 Requires(post):	/sbin/ldconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%description 
+%description
 A library that adds transparent support for anti-aliased fonts to the
 libgdk component of gtk+-1.2.x. Gtk+ widgets will automagically use
 the fonts.
