@@ -32,7 +32,7 @@ libgdk component of gtk+-1.2.x. GTK+ widgets will automagically use
 the fonts.
 
 %description -l pl
-Biblioteka dodaj±ca prze¼roczyst± obs³ugê dla wyg³adzanych fontów w
+Biblioteka dodaj±ca przezroczyst± obs³ugê dla wyg³adzanych fontów w
 komponencie libgdk biblioteki gtk+-1.2.x. Widgety GTK+ automatycznie
 bêd± u¿ywa³y tych fontów.
 
