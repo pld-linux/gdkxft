@@ -47,7 +47,7 @@ Summary(es):	Bibliotecas y archivos de inclusión para desarrollo
 Summary(pl):	Pliki nag³owkowe gdkxft
 Summary(pt_BR):	Bibliotecas e arquivos de inclusão para desenvolvimento
 Group:		Development/Libraries
-PreReq:		%{name} = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for developing apps with will use libgdkxft.
@@ -153,7 +153,7 @@ fi
 %dir %{_datadir}/themes/Gdkxft/gtk
 %ghost %{_datadir}/themes/Gdkxft/gtk/gtkrc
 %attr(755,root,root) %ghost /etc/X11/xinit/xinitrc.d/gdkxft
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/gdkxft.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/gdkxft.conf
 %attr(755,root,root) %{_sbindir}/gdkxft_sysinstall
 %attr(755,root,root) %{_libdir}/libgdkxft.so.*.*
 
