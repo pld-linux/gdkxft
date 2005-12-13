@@ -104,7 +104,7 @@ rm -f missing
 %{__autoconf}
 %{__automake}
 %configure \
-	CFLAGS="%{rpmcflags} -I%{_includedir}/freetype2" \
+	CFLAGS="%{rpmcflags} -I/usr/include/freetype2" \
 	--enable-static \
 	--enable-shared
 
