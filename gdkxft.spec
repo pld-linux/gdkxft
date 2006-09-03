@@ -79,7 +79,7 @@ Bibliotecas estáticas para desenvolvimento com a libgdkxft.
 Summary:	Capplet to configure gdkxft in GNOME
 Summary(pl):	Narzêdzie do konfiguracji gdkxft w GNOME
 Group:		X11/Applications
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description capplet
 Capplet to configure gdkxft in GNOME.
