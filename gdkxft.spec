@@ -4,8 +4,8 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Adapt GTK-1.2 to support xft fonts
-Summary(pl):	Wsparcie dla fontÛw xft dla GTK-1.2
-Summary(pt_BR):	Adapta o GTK-1.2 para suportar fontes xft
+Summary(pl.UTF-8):   Wsparcie dla font√≥w xft dla GTK-1.2
+Summary(pt_BR.UTF-8):   Adapta o GTK-1.2 para suportar fontes xft
 Name:		gdkxft
 Version:	1.5
 Release:	12
@@ -31,61 +31,61 @@ A library that adds transparent support for anti-aliased fonts to the
 libgdk component of gtk+-1.2.x. GTK+ widgets will automagically use
 the fonts.
 
-%description -l pl
-Biblioteka dodaj±ca przezroczyst± obs≥ugÍ dla wyg≥adzanych fontÛw w
+%description -l pl.UTF-8
+Biblioteka dodajƒÖca przezroczystƒÖ obs≈Çugƒô dla wyg≈Çadzanych font√≥w w
 komponencie libgdk biblioteki gtk+-1.2.x. Widgety GTK+ automatycznie
-bÍd± uøywa≥y tych fontÛw.
+bƒôdƒÖ u≈ºywa≈Çy tych font√≥w.
 
-%description -l pt_BR
-Este pacote contÈm bibliotecas para adicionar suporte transparente a
+%description -l pt_BR.UTF-8
+Este pacote cont√©m bibliotecas para adicionar suporte transparente a
 fontes anti-aliased para o componente libgdk do gtk+-1.2. Os widgets
-GTK+ v„o automaticamente usar essas fontes.
+GTK+ v√£o automaticamente usar essas fontes.
 
 %package devel
 Summary:	Header files for developing apps
-Summary(es):	Bibliotecas y archivos de inclusiÛn para desarrollo
-Summary(pl):	Pliki nag≥owkowe gdkxft
-Summary(pt_BR):	Bibliotecas e arquivos de inclus„o para desenvolvimento
+Summary(es.UTF-8):   Bibliotecas y archivos de inclusi√≥n para desarrollo
+Summary(pl.UTF-8):   Pliki nag≈Çowkowe gdkxft
+Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclus√£o para desenvolvimento
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for developing apps with will use libgdkxft.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe do tworzenia aplikacji uøywaj±cych libgdkxft.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe do tworzenia aplikacji u≈ºywajƒÖcych libgdkxft.
 
-%description devel -l pt_BR
-Bibliotecas e arquivos de inclus„o necess·rios para desenvolvimento
+%description devel -l pt_BR.UTF-8
+Bibliotecas e arquivos de inclus√£o necess√°rios para desenvolvimento
 baseado na libgdkxft.
 
 %package static
 Summary:	Static libraries for libgdkxft development
-Summary(pl):	Statyczna biblioteka libgdkxft
-Summary(pt_BR):	Bibliotecas est·ticas para desenvolvimento com a libgdkxft
+Summary(pl.UTF-8):   Statyczna biblioteka libgdkxft
+Summary(pt_BR.UTF-8):   Bibliotecas est√°ticas para desenvolvimento com a libgdkxft
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libraries for libgdkxft development.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libgdkxft.
 
-%description static -l pt_BR
-Bibliotecas est·ticas para desenvolvimento com a libgdkxft.
+%description static -l pt_BR.UTF-8
+Bibliotecas est√°ticas para desenvolvimento com a libgdkxft.
 
 %package capplet
 Summary:	Capplet to configure gdkxft in GNOME
-Summary(pl):	NarzÍdzie do konfiguracji gdkxft w GNOME
+Summary(pl.UTF-8):   Narzƒôdzie do konfiguracji gdkxft w GNOME
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
 %description capplet
 Capplet to configure gdkxft in GNOME.
 
-%description capplet -l pl
-NarzÍdzie do konfiguracji gdkxft w GNOME.
+%description capplet -l pl.UTF-8
+Narzƒôdzie do konfiguracji gdkxft w GNOME.
 
 %prep
 %setup -q
