@@ -4,8 +4,8 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Adapt GTK-1.2 to support xft fonts
-Summary(pl.UTF-8):   Wsparcie dla fontów xft dla GTK-1.2
-Summary(pt_BR.UTF-8):   Adapta o GTK-1.2 para suportar fontes xft
+Summary(pl.UTF-8):	Wsparcie dla fontów xft dla GTK-1.2
+Summary(pt_BR.UTF-8):	Adapta o GTK-1.2 para suportar fontes xft
 Name:		gdkxft
 Version:	1.5
 Release:	12
@@ -43,9 +43,9 @@ GTK+ vão automaticamente usar essas fontes.
 
 %package devel
 Summary:	Header files for developing apps
-Summary(es.UTF-8):   Bibliotecas y archivos de inclusión para desarrollo
-Summary(pl.UTF-8):   Pliki nagłowkowe gdkxft
-Summary(pt_BR.UTF-8):   Bibliotecas e arquivos de inclusão para desenvolvimento
+Summary(es.UTF-8):	Bibliotecas y archivos de inclusión para desarrollo
+Summary(pl.UTF-8):	Pliki nagłowkowe gdkxft
+Summary(pt_BR.UTF-8):	Bibliotecas e arquivos de inclusão para desenvolvimento
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -61,8 +61,8 @@ baseado na libgdkxft.
 
 %package static
 Summary:	Static libraries for libgdkxft development
-Summary(pl.UTF-8):   Statyczna biblioteka libgdkxft
-Summary(pt_BR.UTF-8):   Bibliotecas estáticas para desenvolvimento com a libgdkxft
+Summary(pl.UTF-8):	Statyczna biblioteka libgdkxft
+Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento com a libgdkxft
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -77,7 +77,7 @@ Bibliotecas estáticas para desenvolvimento com a libgdkxft.
 
 %package capplet
 Summary:	Capplet to configure gdkxft in GNOME
-Summary(pl.UTF-8):   Narzędzie do konfiguracji gdkxft w GNOME
+Summary(pl.UTF-8):	Narzędzie do konfiguracji gdkxft w GNOME
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
 
