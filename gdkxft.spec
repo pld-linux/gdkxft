@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	gnome		# without capplet subpackage (which require GNOME libs to build)
 #
-%include	/usr/lib/rpm/macros.perl
 Summary:	Adapt GTK-1.2 to support xft fonts
 Summary(pl.UTF-8):	Wsparcie dla fontów xft dla GTK-1.2
 Summary(pt_BR.UTF-8):	Adapta o GTK-1.2 para suportar fontes xft
